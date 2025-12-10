@@ -32,7 +32,7 @@
         <a href="#about" class="nav-link">サービス</a>
         <a href="#contact" class="nav-link">お問い合わせ</a>
         <!-- 2つの主要CTA: ログイン動線 & メール相談動線 -->
-        <a href="#ai-recommend" class="nav-cta-secondary">ログイン</a>
+        <a href="#" class="nav-cta-secondary" data-ai-modal>ログイン</a>
         <a href="#contact" class="nav-cta">無料相談</a>
       </div>
       <button class="nav-menu-btn" id="menuBtn" aria-label="メニュー">
@@ -50,7 +50,7 @@
       <a href="#about" class="mobile-link">サービス</a>
       <a href="#contact" class="mobile-link">お問い合わせ</a>
       <div class="mobile-cta-group">
-        <a href="#ai-recommend" class="mobile-link-login">ログイン</a>
+        <a href="#" class="mobile-link-login" data-ai-modal>ログイン</a>
         <a href="#contact" class="mobile-link-cta">無料で相談する</a>
       </div>
     </div>
@@ -73,7 +73,7 @@
         </p>
         <!-- 2つの明確なCTA動線 -->
         <div class="hero-actions animate-fade-up delay-3">
-          <a href="#ai-recommend" class="btn btn-ai">
+          <a href="#" class="btn btn-ai" data-ai-modal>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
               <path d="M12 2a10 10 0 0 1 10 10c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2z"></path>
               <path d="M12 6v6l4 2"></path>
@@ -199,50 +199,32 @@
         </div>
       </div>
 
-      <!-- 検索CTA -->
-      <div class="search-cta">
-        <div class="search-options">
-          <a href="#" class="search-option">
-            <span class="search-icon">¥</span>
-            <span class="search-label">価格帯別で探す</span>
-          </a>
-          <a href="#" class="search-option">
-            <span class="search-icon">📍</span>
-            <span class="search-label">エリアから探す</span>
-          </a>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- AI Recommendation Section - ログイン動線 -->
-  <section class="ai-recommend" id="ai-recommend">
-    <div class="container">
-      <div class="ai-content">
-        <div class="ai-text">
-          <h2 class="ai-title">
-            <span class="ai-badge">AI × 専任スタッフ</span>
-            未公開物件を含む<br>あなた専用のレコメンド
-          </h2>
-          <p class="ai-desc">
-            ログインすると、AIがあなたの予算・希望エリア・目的に合わせて、
-            一般公開されていない優良物件をご提案します。
-          </p>
-          <ul class="ai-features">
-            <li>未公開物件へのアクセス</li>
-            <li>AIによるパーソナライズ提案</li>
-            <li>予測収益シミュレーション</li>
-          </ul>
-          <a href="#" class="btn btn-ai-large">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M12 6v6l4 2"></path>
-            </svg>
-            ログインして未公開物件を見る
-          </a>
-          <p class="ai-note">※ アカウント登録は無料です</p>
+  <!-- AI Recommendation Popup Modal -->
+  <div class="ai-modal-overlay" id="aiModalOverlay">
+    <div class="ai-modal" id="aiModal">
+      <button class="ai-modal-close" id="aiModalClose" aria-label="閉じる">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+          <path d="M18 6L6 18M6 6l12 12"></path>
+        </svg>
+      </button>
+      <div class="ai-modal-content">
+        <div class="ai-modal-header">
+          <span class="ai-badge">AI × 専任スタッフ</span>
+          <h2 class="ai-modal-title">未公開物件を含む<br>あなた専用のレコメンド</h2>
         </div>
-        <div class="ai-visual">
+        <p class="ai-modal-desc">
+          ログインすると、AIがあなたの予算・希望エリア・目的に合わせて、
+          一般公開されていない優良物件をご提案します。
+        </p>
+        <ul class="ai-features">
+          <li>未公開物件へのアクセス</li>
+          <li>AIによるパーソナライズ提案</li>
+          <li>予測収益シミュレーション</li>
+        </ul>
+        <div class="ai-modal-visual">
           <div class="ai-mockup">
             <div class="mockup-header">
               <span class="mockup-dot"></span>
@@ -260,9 +242,17 @@
             </div>
           </div>
         </div>
+        <a href="#" class="btn btn-ai-large">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 6v6l4 2"></path>
+          </svg>
+          ログインして未公開物件を見る
+        </a>
+        <p class="ai-note">※ アカウント登録は無料です</p>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- Why FANGO Section -->
   <section class="why" id="about">
@@ -413,10 +403,10 @@
           <span class="title-en">Case Studies</span>
         </h2>
       </div>
-      <div class="case-grid">
-        <article class="case-card">
+      <div class="case-single">
+        <article class="case-card case-card-large">
           <div class="case-image">
-            <img src="https://images.unsplash.com/photo-1578469550956-0e16b69c6a3d?w=600&q=80" alt="長野県の古民家再生事例">
+            <img src="https://images.unsplash.com/photo-1578469550956-0e16b69c6a3d?w=800&q=80" alt="長野県の古民家再生事例">
           </div>
           <div class="case-content">
             <p class="case-meta">長野県・北アルプス山麓 / 築60年 / 古民家を民泊として再生</p>
@@ -444,36 +434,6 @@
             </div>
           </div>
         </article>
-        <article class="case-card">
-          <div class="case-image">
-            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80" alt="千葉県の海沿い古民家再生事例">
-          </div>
-          <div class="case-content">
-            <p class="case-meta">千葉県・九十九里 / 築50年以上 / 海沿い古民家を民泊として再生</p>
-            <div class="case-details">
-              <div class="case-row">
-                <span class="case-label">物件価格</span>
-                <span class="case-value">¥800,000</span>
-              </div>
-              <div class="case-row">
-                <span class="case-label">リノベ費用</span>
-                <span class="case-value">¥2,500,000</span>
-              </div>
-              <div class="case-row">
-                <span class="case-label">補助金</span>
-                <span class="case-value highlight">-¥1,000,000</span>
-              </div>
-              <div class="case-row total">
-                <span class="case-label">実質投資額</span>
-                <span class="case-value">¥2,300,000</span>
-              </div>
-            </div>
-            <div class="case-status">
-              <span class="status-label">現在の状況</span>
-              <span class="status-value">月間収益 ¥95,000 / 利回り 50%</span>
-            </div>
-          </div>
-        </article>
       </div>
     </div>
   </section>
@@ -492,7 +452,7 @@
         </p>
         <div class="cta-buttons">
           <a href="#contact" class="btn btn-cta">無料相談を申し込む</a>
-          <a href="#ai-recommend" class="btn btn-cta-secondary">AIで物件を探す</a>
+          <a href="#" class="btn btn-cta-secondary" data-ai-modal>AIで物件を探す</a>
         </div>
       </div>
     </div>

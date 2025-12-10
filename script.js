@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initContactForm();
   initSmoothScroll();
+  initAIModal();
 });
 
 /**
@@ -59,7 +60,7 @@ function initMobileMenu() {
 }
 
 /**
- * Properties carousel
+ * Properties carousel (mobile/tablet only, disabled on desktop)
  */
 function initCarousel() {
   const carousel = document.getElementById('propertiesCarousel');
@@ -75,15 +76,27 @@ function initCarousel() {
   let currentIndex = 0;
   let cardWidth = 0;
   let cardsVisible = 1;
+  let isDesktop = false;
+
+  const checkDesktop = () => window.innerWidth >= 1024;
 
   const calculateDimensions = () => {
+    isDesktop = checkDesktop();
+
+    // Desktop: disable carousel (CSS handles grid layout)
+    if (isDesktop) {
+      cards.forEach(card => {
+        card.style.flex = '';
+      });
+      track.style.transform = '';
+      return;
+    }
+
     const containerWidth = carousel.offsetWidth;
     const gap = parseInt(getComputedStyle(track).gap) || 24;
 
-    // Determine cards visible based on viewport
-    if (window.innerWidth >= 1024) {
-      cardsVisible = 3;
-    } else if (window.innerWidth >= 768) {
+    // Mobile/Tablet: enable carousel
+    if (window.innerWidth >= 768) {
       cardsVisible = 2;
     } else {
       cardsVisible = 1;
@@ -98,6 +111,8 @@ function initCarousel() {
   };
 
   const updateCarousel = () => {
+    if (isDesktop) return;
+
     const gap = parseInt(getComputedStyle(track).gap) || 24;
     const offset = currentIndex * (cardWidth + gap);
     track.style.transform = `translateX(-${offset}px)`;
@@ -109,6 +124,7 @@ function initCarousel() {
   };
 
   const goToSlide = (index) => {
+    if (isDesktop) return;
     const maxIndex = Math.max(0, cards.length - cardsVisible);
     currentIndex = Math.min(Math.max(0, index), maxIndex);
     updateCarousel();
@@ -135,10 +151,12 @@ function initCarousel() {
   let touchEndX = 0;
 
   track.addEventListener('touchstart', (e) => {
+    if (isDesktop) return;
     touchStartX = e.changedTouches[0].screenX;
   }, { passive: true });
 
   track.addEventListener('touchend', (e) => {
+    if (isDesktop) return;
     touchEndX = e.changedTouches[0].screenX;
     handleSwipe();
   }, { passive: true });
@@ -162,7 +180,9 @@ function initCarousel() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
       calculateDimensions();
-      goToSlide(0);
+      if (!isDesktop) {
+        goToSlide(0);
+      }
     }, 200);
   });
 
@@ -294,7 +314,7 @@ function initContactForm() {
  * Smooth scroll for anchor links
  */
 function initSmoothScroll() {
-  const links = document.querySelectorAll('a[href^="#"]');
+  const links = document.querySelectorAll('a[href^="#"]:not([data-ai-modal])');
   const nav = document.getElementById('nav');
   const navHeight = nav ? nav.offsetHeight : 0;
 
@@ -315,5 +335,59 @@ function initSmoothScroll() {
         behavior: 'smooth'
       });
     });
+  });
+}
+
+/**
+ * AI Recommendation Modal
+ */
+function initAIModal() {
+  const modalOverlay = document.getElementById('aiModalOverlay');
+  const modalCloseBtn = document.getElementById('aiModalClose');
+  const aiTriggers = document.querySelectorAll('[data-ai-modal]');
+
+  if (!modalOverlay) return;
+
+  const openModal = () => {
+    modalOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  // Open modal from AI buttons
+  aiTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+
+      // Close mobile menu if open
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.classList.remove('active');
+        mobileMenu.classList.remove('active');
+      }
+    });
+  });
+
+  // Close modal
+  modalCloseBtn?.addEventListener('click', closeModal);
+
+  // Close on overlay click
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) {
+      closeModal();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+      closeModal();
+    }
   });
 }
