@@ -1026,18 +1026,18 @@ button {
 }
 
 .support-flow {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-lg);
-  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 500px;
   margin: 0 auto;
 }
 
 .flow-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-md);
   padding: var(--space-md);
   background: white;
   border-radius: var(--radius-lg);
@@ -1046,13 +1046,14 @@ button {
 }
 
 .flow-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .flow-icon {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--color-kakishibu) 0%, #a84400 100%);
   display: flex;
@@ -1062,23 +1063,28 @@ button {
 }
 
 .flow-icon svg {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
+}
+
+.flow-text {
+  flex: 1;
 }
 
 .flow-title {
   font-family: var(--font-display);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   font-weight: 600;
   color: var(--color-ink);
-  text-align: center;
+  text-align: left;
+  margin-bottom: 4px;
 }
 
 .flow-desc {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--color-stone);
-  text-align: center;
-  line-height: 1.6;
+  text-align: left;
+  line-height: 1.5;
 }
 
 .flow-arrow {
@@ -1093,35 +1099,46 @@ button {
 }
 
 .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: var(--space-md);
   margin-top: var(--space-lg);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .stat-item {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: var(--space-md);
+  background: var(--color-paper);
+  border-radius: var(--radius-md);
+}
+
+.stat-label {
+  font-size: var(--font-size-base);
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.stat-numbers {
+  display: flex;
+  align-items: baseline;
 }
 
 .stat-value {
   font-family: var(--font-accent);
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 400;
   color: var(--color-kakishibu);
 }
 
 .stat-suffix {
   font-family: var(--font-accent);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--color-kakishibu);
-}
-
-.stat-label {
-  display: block;
-  margin-top: var(--space-xs);
-  font-size: 0.9rem;
-  color: var(--color-stone);
 }
 
 /* ========== Testimonials Section ========== */
@@ -1637,6 +1654,7 @@ button {
   /* Support Flow - Tablet: 4 columns with arrows */
   .support-flow {
     display: flex;
+    flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: flex-start;
@@ -1645,7 +1663,28 @@ button {
   }
 
   .flow-item {
-    flex: 0 1 180px;
+    flex: 0 1 160px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .flow-icon {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+  }
+
+  .flow-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .flow-title {
+    text-align: center;
+  }
+
+  .flow-desc {
+    text-align: center;
   }
 
   .flow-arrow {
@@ -1664,14 +1703,36 @@ button {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Support Flow */
-  .flow-arrow {
-    display: block;
+  /* Stats - Tablet: horizontal 3 columns */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-direction: row;
+    max-width: 100%;
+    gap: var(--space-lg);
   }
 
-  /* Stats */
+  .stat-item {
+    flex-direction: column;
+    text-align: center;
+    background: transparent;
+  }
+
+  .stat-label {
+    order: 2;
+    margin-top: var(--space-xs);
+  }
+
+  .stat-numbers {
+    order: 1;
+  }
+
   .stat-value {
-    font-size: 3.5rem;
+    font-size: 3rem;
+  }
+
+  .stat-suffix {
+    font-size: 1.5rem;
   }
 
   /* Testimonials */
