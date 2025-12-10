@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initCarousel();
   initScrollReveal();
-  initCounters();
+  // Counter animation removed per user request
+  // initCounters();
   initContactForm();
   initSmoothScroll();
   initAIModal();
@@ -131,11 +132,27 @@ function initCarousel() {
   };
 
   const goNext = () => {
-    goToSlide(currentIndex + 1);
+    if (isDesktop) return;
+    const maxIndex = Math.max(0, cards.length - cardsVisible);
+    // Loop: if at end, go to beginning
+    if (currentIndex >= maxIndex) {
+      currentIndex = 0;
+    } else {
+      currentIndex++;
+    }
+    updateCarousel();
   };
 
   const goPrev = () => {
-    goToSlide(currentIndex - 1);
+    if (isDesktop) return;
+    const maxIndex = Math.max(0, cards.length - cardsVisible);
+    // Loop: if at beginning, go to end
+    if (currentIndex <= 0) {
+      currentIndex = maxIndex;
+    } else {
+      currentIndex--;
+    }
+    updateCarousel();
   };
 
   // Event listeners

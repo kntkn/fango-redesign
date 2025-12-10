@@ -549,8 +549,7 @@ button {
 .properties-carousel {
   position: relative;
   overflow: hidden;
-  margin: 0 calc(-1 * var(--space-md));
-  padding: 0 var(--space-md);
+  width: 100%;
 }
 
 .carousel-track {
@@ -561,7 +560,8 @@ button {
 }
 
 .property-card {
-  flex: 0 0 100%;
+  flex: 0 0 calc(100% - var(--space-md));
+  min-width: 0;
   background: white;
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -737,6 +737,8 @@ button {
   align-items: center;
   justify-content: center;
   padding: var(--space-md);
+  overflow-y: auto;
+  overscroll-behavior: contain;
 }
 
 .ai-modal-overlay.active {
@@ -913,18 +915,40 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1.25rem 2rem;
+  padding: 1rem 1.5rem;
   background: linear-gradient(135deg, var(--color-ai) 0%, #1d4ed8 100%);
   color: white;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
   font-weight: 600;
   border-radius: var(--radius-md);
   transition: var(--transition-base);
+  width: 100%;
+  justify-content: center;
 }
 
 .btn-ai-large:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+}
+
+.btn-ai-large svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Desktop modal button */
+@media (min-width: 768px) {
+  .btn-ai-large {
+    width: auto;
+    padding: 1.25rem 2rem;
+    font-size: var(--font-size-lg);
+  }
+
+  .btn-ai-large svg {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .ai-note {
@@ -1002,45 +1026,64 @@ button {
 }
 
 .support-flow {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-sm);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .flow-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-sm);
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: var(--transition-base);
 }
 
-.flow-number {
-  width: 48px;
-  height: 48px;
+.flow-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+.flow-icon {
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  background: var(--color-kakishibu);
-  color: white;
+  background: linear-gradient(135deg, var(--color-kakishibu) 0%, #a84400 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-size-lg);
-  font-weight: 600;
+  color: white;
+}
+
+.flow-icon svg {
+  width: 32px;
+  height: 32px;
 }
 
 .flow-title {
-  font-size: var(--font-size-base);
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
   font-weight: 600;
   color: var(--color-ink);
   text-align: center;
 }
 
-.flow-arrow {
-  font-size: 1.5rem;
+.flow-desc {
+  font-size: 0.9rem;
   color: var(--color-stone);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.flow-arrow {
   display: none;
+  color: var(--color-stone);
 }
 
 /* ========== Stats Section ========== */
@@ -1588,7 +1631,32 @@ button {
   }
 
   .property-card {
-    flex: 0 0 calc(50% - var(--space-md));
+    flex: 0 0 calc(50% - var(--space-lg) / 2);
+  }
+
+  /* Support Flow - Tablet: 4 columns with arrows */
+  .support-flow {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    max-width: 100%;
+  }
+
+  .flow-item {
+    flex: 0 1 180px;
+  }
+
+  .flow-arrow {
+    display: flex;
+    align-items: center;
+    padding-top: var(--space-lg);
+  }
+
+  .flow-arrow svg {
+    width: 24px;
+    height: 24px;
   }
 
   /* Why Grid */
