@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fango - 空き家再生プラットフォーム | 地方空き家があなたの夢を叶える拠点に</title>
+  <meta name="description" content="100万円以下から始められる空き家再生。全国の自治体連携物件を低予算でご紹介。契約から運用までワンストップサポート。">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Noise Texture Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-text">Fango</span>
+        <span class="logo-tagline">空き家再生</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">FANGOとは</a>
+        <a href="#properties" class="nav-link">物件を探す</a>
+        <a href="#why" class="nav-link">選ばれる理由</a>
+        <a href="#testimonials" class="nav-link">お客様の声</a>
+        <a href="#contact" class="nav-cta">無料相談</a>
+      </div>
+      <button class="nav-menu-btn" id="menuBtn" aria-label="メニュー">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-content">
+      <a href="#about" class="mobile-link">FANGOとは</a>
+      <a href="#properties" class="mobile-link">物件を探す</a>
+      <a href="#why" class="mobile-link">選ばれる理由</a>
+      <a href="#testimonials" class="mobile-link">お客様の声</a>
+      <a href="#contact" class="mobile-link-cta">無料相談</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-background">
+      <div class="hero-gradient"></div>
+      <div class="hero-pattern"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-eyebrow animate-fade-up">100万円以下から叶える、新しい暮らし</p>
+        <h1 class="hero-title animate-fade-up delay-1">
+          <span class="hero-title-line">地方空き家が、</span>
+          <span class="hero-title-line accent">あなたの夢を叶える</span>
+          <span class="hero-title-line">拠点になる。</span>
+        </h1>
+        <p class="hero-subtitle animate-fade-up delay-2">
+          全国の自治体連携物件を、契約から運用まで<br class="mobile-break">ワンストップでサポート
+        </p>
+        <div class="hero-actions animate-fade-up delay-3">
+          <a href="#properties" class="btn btn-primary">物件を探す</a>
+          <a href="#contact" class="btn btn-secondary">無料相談</a>
+        </div>
+      </div>
+      <div class="hero-visual animate-fade-left delay-2">
+        <div class="hero-image-container">
+          <div class="hero-image-frame">
+            <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?w=800&q=80" alt="日本の伝統的な古民家" class="hero-image">
+          </div>
+          <div class="hero-image-accent"></div>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-number">1,200+</span>
+          <span class="stat-label">再生物件実績</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2 class="section-title">
+          <span class="title-jp">FANGOとは</span>
+          <span class="title-en">About Us</span>
+        </h2>
+      </div>
+      <div class="about-content">
+        <div class="about-text">
+          <p class="about-lead">
+            日本全国に眠る<strong>800万戸以上</strong>の空き家。<br>
+            私たちは、この眠れる資産を<br class="desktop-break">
+            <span class="text-accent">あなたの夢を叶える場所</span>へと再生します。
+          </p>
+          <p class="about-body">
+            自治体との連携により、通常では出会えない優良物件をご紹介。
+            契約・登記から補助金申請、リノベーション、運営代行まで、
+            すべてのプロセスをワンストップでサポートいたします。
+          </p>
+          <div class="about-features">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+              </div>
+              <span>自治体連携物件</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 6v6l4 2"></path>
+                </svg>
+              </div>
+              <span>ワンストップ対応</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                  <path d="M2 17l10 5 10-5"></path>
+                  <path d="M2 12l10 5 10-5"></path>
+                </svg>
+              </div>
+              <span>運用サポート</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="about-images">
+            <div class="about-image-1">
+              <img src="https://images.unsplash.com/photo-1578469550956-0e16b69c6a3d?w=600&q=80" alt="リノベーションされた古民家の内装">
+            </div>
+            <div class="about-image-2">
+              <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=400&q=80" alt="日本の田園風景">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Properties -->
+  <section class="properties" id="properties">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">02</span>
+        <h2 class="section-title">
+          <span class="title-jp">注目の物件</span>
+          <span class="title-en">Featured Properties</span>
+        </h2>
+      </div>
+      <div class="properties-intro">
+        <p>ご予算に合わせて、全国の空き家・古民家をレコメンド。</p>
+      </div>
+      <div class="properties-grid">
+        <article class="property-card featured">
+          <div class="property-badge">おすすめ</div>
+          <div class="property-image">
+            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=80" alt="長野県の古民家">
+          </div>
+          <div class="property-content">
+            <div class="property-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              長野県・松本市
+            </div>
+            <h3 class="property-title">築80年の蔵付き古民家</h3>
+            <p class="property-desc">広大な敷地と蔵を活かした民泊運用に最適。補助金対象物件。</p>
+            <div class="property-details">
+              <span class="property-price">¥780,000</span>
+              <span class="property-yield">想定利回り 12%</span>
+            </div>
+            <a href="#contact" class="property-link">詳細を見る</a>
+          </div>
+        </article>
+
+        <article class="property-card">
+          <div class="property-image">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80" alt="新潟県の一軒家">
+          </div>
+          <div class="property-content">
+            <div class="property-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              新潟県・越後湯沢
+            </div>
+            <h3 class="property-title">スキーリゾート近郊の一軒家</h3>
+            <p class="property-desc">ウィンターシーズンの民泊需要が見込める好立地。</p>
+            <div class="property-details">
+              <span class="property-price">¥450,000</span>
+              <span class="property-yield">想定利回り 18%</span>
+            </div>
+            <a href="#contact" class="property-link">詳細を見る</a>
+          </div>
+        </article>
+
+        <article class="property-card">
+          <div class="property-image">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="瀬戸内の海辺の家">
+          </div>
+          <div class="property-content">
+            <div class="property-location">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              香川県・直島
+            </div>
+            <h3 class="property-title">瀬戸内海を望む海辺の家</h3>
+            <p class="property-desc">アート観光客向けのゲストハウス運営に。</p>
+            <div class="property-details">
+              <span class="property-price">¥920,000</span>
+              <span class="property-yield">想定利回り 15%</span>
+            </div>
+            <a href="#contact" class="property-link">詳細を見る</a>
+          </div>
+        </article>
+      </div>
+      <div class="properties-cta">
+        <a href="#contact" class="btn btn-outline">すべての物件を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Fango Section -->
+  <section class="why" id="why">
+    <div class="why-background">
+      <div class="why-pattern"></div>
+    </div>
+    <div class="container">
+      <div class="section-header light">
+        <span class="section-number">03</span>
+        <h2 class="section-title">
+          <span class="title-jp">FANGOが選ばれる理由</span>
+          <span class="title-en">Why Choose FANGO</span>
+        </h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-number">01</div>
+          <div class="why-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="32" cy="32" r="28"></circle>
+              <path d="M32 16v16l8 8"></path>
+              <path d="M20 44l4-4"></path>
+              <path d="M44 44l-4-4"></path>
+            </svg>
+          </div>
+          <h3 class="why-title">数十万円から始められる</h3>
+          <p class="why-desc">
+            全国の自治体連携物件や再生空き家を低予算でご紹介。
+            100万円以下の物件も多数取り扱っております。
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-number">02</div>
+          <div class="why-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="8" y="16" width="48" height="40" rx="4"></rect>
+              <path d="M8 28h48"></path>
+              <path d="M24 16V8"></path>
+              <path d="M40 16V8"></path>
+              <path d="M20 40h8"></path>
+              <path d="M36 40h8"></path>
+            </svg>
+          </div>
+          <h3 class="why-title">補助金・運用まで丸ごとサポート</h3>
+          <p class="why-desc">
+            契約・登記・補助金申請から運営代行までワンストップ。
+            面倒な手続きはすべてお任せください。
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-number">03</div>
+          <div class="why-icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M8 52V20l24-12 24 12v32"></path>
+              <path d="M8 52h48"></path>
+              <rect x="24" y="36" width="16" height="16"></rect>
+              <path d="M32 36v16"></path>
+              <path d="M24 44h16"></path>
+            </svg>
+          </div>
+          <h3 class="why-title">利回り実績5〜20%の運用事例</h3>
+          <p class="why-desc">
+            民泊・長期賃貸など、目的に合わせた高収益モデルをご提案。
+            投資初心者の方も安心してスタートできます。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-value" data-target="1200">0</span>
+          <span class="stat-suffix">+</span>
+          <span class="stat-label">累計再生物件数</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value" data-target="47">0</span>
+          <span class="stat-label">都道府県対応</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value" data-target="98">0</span>
+          <span class="stat-suffix">%</span>
+          <span class="stat-label">顧客満足度</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value" data-target="15">0</span>
+          <span class="stat-suffix">%</span>
+          <span class="stat-label">平均利回り</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support Flow Section -->
+  <section class="support">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">04</span>
+        <h2 class="section-title">
+          <span class="title-jp">すべてを一貫サポート</span>
+          <span class="title-en">Comprehensive Support</span>
+        </h2>
+      </div>
+      <div class="support-flow">
+        <div class="flow-item">
+          <div class="flow-step">Step 1</div>
+          <div class="flow-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="24" cy="20" r="8"></circle>
+              <path d="M8 44c0-8.837 7.163-16 16-16s16 7.163 16 16"></path>
+            </svg>
+          </div>
+          <h4 class="flow-title">無料相談</h4>
+          <p class="flow-desc">ご要望をヒアリングし、最適な物件をご提案</p>
+        </div>
+        <div class="flow-connector"></div>
+        <div class="flow-item">
+          <div class="flow-step">Step 2</div>
+          <div class="flow-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="8" y="8" width="32" height="32" rx="4"></rect>
+              <path d="M16 20h16"></path>
+              <path d="M16 28h10"></path>
+            </svg>
+          </div>
+          <h4 class="flow-title">物件選定</h4>
+          <p class="flow-desc">現地調査から価格交渉までお任せ</p>
+        </div>
+        <div class="flow-connector"></div>
+        <div class="flow-item">
+          <div class="flow-step">Step 3</div>
+          <div class="flow-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 40V16l12-8 12 8v24"></path>
+              <rect x="18" y="28" width="12" height="12"></rect>
+            </svg>
+          </div>
+          <h4 class="flow-title">契約・登記</h4>
+          <p class="flow-desc">補助金申請も含めた手続きをサポート</p>
+        </div>
+        <div class="flow-connector"></div>
+        <div class="flow-item">
+          <div class="flow-step">Step 4</div>
+          <div class="flow-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="24" cy="24" r="16"></circle>
+              <path d="M24 16v8l6 6"></path>
+            </svg>
+          </div>
+          <h4 class="flow-title">運用開始</h4>
+          <p class="flow-desc">民泊運営・賃貸管理もお任せ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">05</span>
+        <h2 class="section-title">
+          <span class="title-jp">購入者の声</span>
+          <span class="title-en">Testimonials</span>
+        </h2>
+      </div>
+      <div class="testimonials-grid">
+        <article class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            都内で長らく暮らしていますが、ずっと故郷の長野に気軽に立ち寄れる拠点が欲しいと考えていました。
+            金額を考えると空き家の購入が一番良いとは思っていましたが、修繕や手続きのリスクや金額がはっきりせず躊躇していました。
+            業者の手配や手続き、金額に関しても明確にサポートしてもらえたおかげで、踏み出すことができました。
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">T.S</div>
+            <div class="author-info">
+              <span class="author-name">T.S 様</span>
+              <span class="author-detail">50代・東京都在住 → 長野県に第二の拠点</span>
+            </div>
+          </div>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-quote">"</div>
+          <p class="testimonial-text">
+            老後を考え投資用物件を購入したいが、何分初心者なので最初から大きな金額の物件の購入は不安でした。
+            まさにはじめの1件目として、最悪失敗しても更地にして売っても損しないと思える物件に出会えました。
+            金額は小さいながらも賃貸利用者もいる状態で、利回りが安定しているので大変満足しています。
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">K.M</div>
+            <div class="author-info">
+              <span class="author-name">K.M 様</span>
+              <span class="author-detail">40代・大阪府在住 → 新潟県に投資物件</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="cta-background">
+      <div class="cta-pattern"></div>
+    </div>
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">今すぐ相談してみませんか？</h2>
+        <p class="cta-text">
+          空き家購入・投資に関するご質問、物件のご相談など<br>
+          お気軽にお問い合わせください。
+        </p>
+        <a href="#contact" class="btn btn-cta">無料相談を申し込む</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-number">06</span>
+        <h2 class="section-title">
+          <span class="title-jp">お問い合わせ</span>
+          <span class="title-en">Contact</span>
+        </h2>
+      </div>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <p class="contact-lead">
+            空き家購入・投資について<br>
+            お気軽にご相談ください
+          </p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>info@fango.jp</span>
+            </div>
+            <div class="contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>03-1234-5678</span>
+            </div>
+          </div>
+          <p class="contact-note">
+            ※2営業日以内にご連絡いたします
+          </p>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">お名前 <span class="required">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="山田 太郎">
+          </div>
+          <div class="form-group">
+            <label for="email">メールアドレス <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="example@email.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">電話番号</label>
+            <input type="tel" id="phone" name="phone" placeholder="090-1234-5678">
+          </div>
+          <div class="form-group">
+            <label for="interest">ご興味のある内容</label>
+            <select id="interest" name="interest">
+              <option value="">選択してください</option>
+              <option value="purchase">物件購入について</option>
+              <option value="investment">投資相談</option>
+              <option value="operation">運用代行について</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">メッセージ</label>
+            <textarea id="message" name="message" rows="5" placeholder="ご質問やご要望があればご記入ください"></textarea>
+          </div>
+          <button type="submit" class="btn btn-submit">送信する</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="footer-logo">Fango</span>
+          <p class="footer-tagline">100万円以下から叶える空き家再生</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>サービス</h4>
+            <a href="#properties">物件を探す</a>
+            <a href="#why">選ばれる理由</a>
+            <a href="#testimonials">お客様の声</a>
+          </div>
+          <div class="footer-column">
+            <h4>会社情報</h4>
+            <a href="#">会社概要</a>
+            <a href="#">採用情報</a>
+            <a href="#">お知らせ</a>
+          </div>
+          <div class="footer-column">
+            <h4>サポート</h4>
+            <a href="#contact">お問い合わせ</a>
+            <a href="#">よくある質問</a>
+            <a href="#">プライバシーポリシー</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Fango Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
