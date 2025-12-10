@@ -83,6 +83,17 @@ a {
   transition: var(--transition-fast);
 }
 
+/* Responsive display utilities */
+.mobile-only {
+  display: inline;
+}
+
+@media (min-width: 1024px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
 button {
   border: none;
   background: none;
