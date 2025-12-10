@@ -968,6 +968,15 @@ button {
   flex-shrink: 0;
 }
 
+/* Mobile/Desktop text toggle for modal button */
+.btn-text-desktop {
+  display: none;
+}
+
+.btn-text-mobile {
+  display: inline;
+}
+
 /* Desktop modal button */
 @media (min-width: 768px) {
   .btn-ai-large {
@@ -980,6 +989,14 @@ button {
   .btn-ai-large svg {
     width: 24px;
     height: 24px;
+  }
+
+  .btn-text-desktop {
+    display: inline;
+  }
+
+  .btn-text-mobile {
+    display: none;
   }
 }
 
@@ -1818,7 +1835,7 @@ button {
 /* ========== Desktop (1024px+) ========== */
 @media (min-width: 1024px) {
   .hero-title {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
   }
 
   .hero-image {
