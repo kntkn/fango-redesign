@@ -1904,88 +1904,106 @@ button {
   }
 }
 
-/* ========== Gallery Showcase Section ========== */
-.gallery-showcase {
-  position: relative;
-  overflow: hidden;
-  padding: var(--space-lg) 0;
-  background: linear-gradient(135deg, var(--color-paper) 0%, rgba(245, 240, 232, 0.8) 100%);
-}
-
-.gallery-container {
+/* ========== Hero Gallery (Right Side) ========== */
+.hero-gallery-container {
   position: relative;
   width: 100%;
-  height: 300px;
+  height: 100%;
   overflow: hidden;
+  border-radius: var(--radius-xl);
   mask: linear-gradient(
     to right,
     transparent 0%,
-    black 10%,
-    black 90%,
+    black 5%,
+    black 95%,
     transparent 100%
   );
   -webkit-mask: linear-gradient(
     to right,
     transparent 0%,
-    black 10%,
-    black 90%,
+    black 5%,
+    black 95%,
     transparent 100%
   );
 }
 
-.gallery-track {
+.hero-gallery-track {
   display: flex;
-  gap: var(--space-md);
-  animation: scroll-infinite 45s linear infinite;
+  gap: var(--space-sm);
+  animation: hero-scroll-infinite 20s linear infinite;
   will-change: transform;
+  height: 100%;
+  align-items: stretch;
 }
 
-.gallery-item {
+.gallery-card {
   flex-shrink: 0;
-  width: 280px;
-  height: 280px;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   transition: var(--transition-base);
   position: relative;
 }
 
-.gallery-item::before {
+.gallery-card::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    45deg,
+    135deg,
     rgba(255, 255, 255, 0.1) 0%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.1) 100%
+    transparent 40%,
+    rgba(0, 0, 0, 0.05) 100%
   );
   pointer-events: none;
   z-index: 2;
 }
 
-.gallery-item img {
+/* カードサイズバリエーション */
+.gallery-card.large {
+  width: 240px;
+  height: 320px;
+}
+
+.gallery-card.medium {
+  width: 180px;
+  height: 240px;
+  align-self: center;
+}
+
+.gallery-card.small {
+  width: 120px;
+  height: 150px;
+}
+
+.gallery-card-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  flex-shrink: 0;
+}
+
+.gallery-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   transition: var(--transition-base);
-  filter: sepia(10%) contrast(1.05) brightness(1.02);
+  filter: sepia(8%) contrast(1.08) brightness(1.02) saturate(1.1);
 }
 
-.gallery-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 64px rgba(0, 0, 0, 0.2);
+.gallery-card:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
-.gallery-item:hover img {
-  transform: scale(1.02);
-  filter: sepia(0%) contrast(1.1) brightness(1.05);
+.gallery-card:hover img {
+  transform: scale(1.05);
+  filter: sepia(0%) contrast(1.15) brightness(1.05) saturate(1.2);
 }
 
-/* 無限スクロールアニメーション */
-@keyframes scroll-infinite {
+/* 高速無限スクロールアニメーション */
+@keyframes hero-scroll-infinite {
   0% {
     transform: translateX(0);
   }
@@ -1994,39 +2012,56 @@ button {
   }
 }
 
-/* アニメーションを一時停止させるオプション */
-.gallery-track:hover {
+/* ホバーで一時停止 */
+.hero-gallery-track:hover {
   animation-play-state: paused;
 }
 
-/* ========== Responsive Gallery ========== */
+/* ========== Responsive Hero Gallery ========== */
 @media (max-width: 768px) {
-  .gallery-container {
+  .hero-gallery-track {
+    animation-duration: 15s;
+  }
+
+  .gallery-card.large {
+    width: 160px;
     height: 200px;
   }
 
-  .gallery-item {
-    width: 200px;
-    height: 180px;
+  .gallery-card.medium {
+    width: 120px;
+    height: 160px;
   }
 
-  .gallery-track {
-    gap: var(--space-sm);
-    animation-duration: 35s;
+  .gallery-card.small {
+    width: 80px;
+    height: 100px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-gallery-track {
+    animation-duration: 25s;
   }
 }
 
 @media (min-width: 1200px) {
-  .gallery-container {
-    height: 350px;
+  .hero-gallery-track {
+    animation-duration: 30s;
   }
 
-  .gallery-item {
-    width: 320px;
-    height: 320px;
+  .gallery-card.large {
+    width: 280px;
+    height: 360px;
   }
 
-  .gallery-track {
-    animation-duration: 55s;
+  .gallery-card.medium {
+    width: 200px;
+    height: 260px;
+  }
+
+  .gallery-card.small {
+    width: 140px;
+    height: 170px;
   }
 }
