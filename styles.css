@@ -1903,3 +1903,130 @@ button {
     gap: var(--space-2xl);
   }
 }
+
+/* ========== Gallery Showcase Section ========== */
+.gallery-showcase {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-lg) 0;
+  background: linear-gradient(135deg, var(--color-paper) 0%, rgba(245, 240, 232, 0.8) 100%);
+}
+
+.gallery-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  mask: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.gallery-track {
+  display: flex;
+  gap: var(--space-md);
+  animation: scroll-infinite 45s linear infinite;
+  will-change: transform;
+}
+
+.gallery-item {
+  flex-shrink: 0;
+  width: 280px;
+  height: 280px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transition: var(--transition-base);
+  position: relative;
+}
+
+.gallery-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: var(--transition-base);
+  filter: sepia(10%) contrast(1.05) brightness(1.02);
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 64px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.02);
+  filter: sepia(0%) contrast(1.1) brightness(1.05);
+}
+
+/* 無限スクロールアニメーション */
+@keyframes scroll-infinite {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* アニメーションを一時停止させるオプション */
+.gallery-track:hover {
+  animation-play-state: paused;
+}
+
+/* ========== Responsive Gallery ========== */
+@media (max-width: 768px) {
+  .gallery-container {
+    height: 200px;
+  }
+
+  .gallery-item {
+    width: 200px;
+    height: 180px;
+  }
+
+  .gallery-track {
+    gap: var(--space-sm);
+    animation-duration: 35s;
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery-container {
+    height: 350px;
+  }
+
+  .gallery-item {
+    width: 320px;
+    height: 320px;
+  }
+
+  .gallery-track {
+    animation-duration: 55s;
+  }
+}
