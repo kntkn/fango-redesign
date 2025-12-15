@@ -1959,21 +1959,21 @@ button {
   z-index: 2;
 }
 
-/* カードサイズバリエーション */
+/* カードサイズバリエーション - 横長レイアウト */
 .gallery-card.large {
-  width: 240px;
-  height: 320px;
+  width: 320px;
+  height: 200px;
 }
 
 .gallery-card.medium {
-  width: 180px;
-  height: 240px;
+  width: 240px;
+  height: 150px;
   align-self: center;
 }
 
 .gallery-card.small {
-  width: 120px;
-  height: 150px;
+  width: 160px;
+  height: 100px;
 }
 
 .gallery-card-column {
@@ -2024,18 +2024,18 @@ button {
   }
 
   .gallery-card.large {
-    width: 160px;
-    height: 200px;
+    width: 200px;
+    height: 120px;
   }
 
   .gallery-card.medium {
-    width: 120px;
-    height: 160px;
+    width: 160px;
+    height: 100px;
   }
 
   .gallery-card.small {
-    width: 80px;
-    height: 100px;
+    width: 120px;
+    height: 75px;
   }
 }
 
@@ -2051,17 +2051,17 @@ button {
   }
 
   .gallery-card.large {
-    width: 280px;
-    height: 360px;
+    width: 400px;
+    height: 250px;
   }
 
   .gallery-card.medium {
-    width: 200px;
-    height: 260px;
+    width: 300px;
+    height: 180px;
   }
 
   .gallery-card.small {
-    width: 140px;
-    height: 170px;
+    width: 200px;
+    height: 120px;
   }
 }
